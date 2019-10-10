@@ -11,10 +11,10 @@ class ProfilesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(User $user)//class user sudah menjadi $user 
     {   
-        
-        return view('profiles.index',['user'=>$user]);
+        //semua tinggal di panggil di view tidak perlu di pisahkan per parameter 
+        return view('profiles.index',compact('user','profile'));
        
     }
 
