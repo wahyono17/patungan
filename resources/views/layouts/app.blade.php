@@ -61,7 +61,7 @@
                                         {{ __('Logout') }}
                                     </a>
                                     <!-- coba profile -->
-                                    <a class="dropdown-item" href="">Profile</a>
+                                    <a class="dropdown-item" href="/profile/{{Auth::user()->id}}">Profile</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf

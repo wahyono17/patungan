@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Storage;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -11,10 +12,9 @@ class ProfilesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(User $user)//class di panggil semua sudah muncul tidak perlu parameter per user
     {   
-        
-        return view('profiles.index',['user'=>$user]);
+        return view('profiles.index',compact('user'));
        
     }
 

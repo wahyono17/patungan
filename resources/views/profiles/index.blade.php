@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <p>test</p>
-</body>
-</html>
+@extends('layouts.app')
+@section('content')
+    <div class="container">
+    <div class="row">
+        <!--picture profile-->
+        <div class="col-3 p-2">
+            <img src="/storage/noImage.jpg" class="w-100">
+        </div>
+        <div class="p-2">
+            <h6>Nama : {{$user->name}}</h6>
+            <h6>Email : {{$user->email}}</h6>
+            <h6>test : {{ route('register') }}</h6>
+        </div>    
+        
+    </div>
+    </div>
+@endsection
