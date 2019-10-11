@@ -12,9 +12,16 @@ class ProfilesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function index(User $user)//class di panggil semua sudah muncul tidak perlu parameter per user
     {   
         return view('profiles.index',compact('user'));
+=======
+    public function index(User $user)//class user sudah menjadi $user 
+    {   
+        //semua tinggal di panggil di view tidak perlu di pisahkan per parameter 
+        return view('profiles.index',compact('user','profile'));
+>>>>>>> 045aea1a6c741407729cd0efd08b53faf4f82090
        
     }
 
