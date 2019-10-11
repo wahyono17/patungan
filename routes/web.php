@@ -23,3 +23,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile/{user}', 'ProfilesController@index');
+Route::get('/profile/{user}/edit', 'ProfilesController@edit');
+Route::patch('/profile/{user}', 'ProfilesController@update');

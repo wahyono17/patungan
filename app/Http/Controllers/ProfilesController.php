@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Storage;
 use App\User;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ProfilesController extends Controller
 {
@@ -16,9 +17,8 @@ class ProfilesController extends Controller
     public function index(User $user)//class user sudah menjadi $user 
     {   
         //semua tinggal di panggil di view tidak perlu di pisahkan per parameter 
-        return view('profiles.index',compact('user','profile'));
-
-       
+        return view('profiles.index',compact('user'));
+   
     }
 
     /**
@@ -59,9 +59,11 @@ class ProfilesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        $this->authorize('update', $user->profile);//this for security only setting di app\policies
+
+        return view('profiles.edit', compact('user'));
     }
 
     /**
@@ -71,9 +73,32 @@ class ProfilesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(User $user)
     {
-        //
+        $this->authorize('update', $user->profile);
+
+        $data = request()->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'url' => 'url',
+            'image' => '',
+        ]);
+
+        if (request('image')) {
+            $imagePath = request('image')->store('profile', 'public');
+
+            $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
+            $image->save();
+
+            $imageArray = ['image' => $imagePath];
+        }
+
+        auth()->user()->profile->update(array_merge(
+            $data,
+            $imageArray ?? []
+        ));
+
+        return redirect("/profile/{$user->id}");
     }
 
     /**
