@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
     <div class="container">
     <div class="row">
         <!--picture profile-->
@@ -13,8 +12,7 @@
           
           asyq5we  <h6>test : {{ route('register') }}</h6>
         </div>    
-        
+        <a href="/profile/{{ $user->id }}/edit">Edit Profile</a>
     </div>
     </div>
-
 @endsection
