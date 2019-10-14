@@ -98,7 +98,7 @@ class ProfilesController extends Controller
         //proses ini akan mengupdate di database
         auth()->user()->profile->update(array_merge(
             $data,
-            $imageArray ?? []
+            $imageArray ?? []//jika ada image selain itu array kosong
         ));
 
         return redirect("/profile/{$user->id}");

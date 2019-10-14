@@ -50,6 +50,10 @@
                             @endif
                         @else
                             <div>                            
+                            <!-- untuk menampilkan Take -->
+                            <a class="nav-link" href="/post/{{Auth::user()->id}}">Take</a>
+                            </div>
+                            <div>                            
                             <!-- untuk menampilkan Post -->
                             <a class="nav-link" href="/post/{{Auth::user()->id}}">Post</a>
                             </div>
