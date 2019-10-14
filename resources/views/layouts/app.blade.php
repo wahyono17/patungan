@@ -49,6 +49,14 @@
                                 </li>
                             @endif
                         @else
+                            <div>                            
+                            <!-- untuk menampilkan Post -->
+                            <a class="nav-link" href="/post/{{Auth::user()->id}}">Post</a>
+                            </div>
+                            <div>                            
+                            <!-- untuk menampilkan home yaitu = welcome -->
+                            <a class="nav-link" href="/">Home</a>
+                            </div>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -60,14 +68,13 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    <!-- coba profile -->
+                                    <!-- untuk menampilkan profile -->
                                     <a class="dropdown-item" href="/profile/{{Auth::user()->id}}">Profile</a>
-
+                                    
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
-                                
                             </li>
                         @endguest
                     </ul>

@@ -36,17 +36,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    protected static function boot(){
+    protected static function boot(){//ketika user pertama di buat maka akan membuat profile juga
         parent::boot();
         static::created(function($user){
             $user->profile()->create([
                 'title' => $user->name,
+                'image'=>'profile/xjv5ig59e7lMtLnFd2wOCPGH2LQlfh0oC2U74OpQ.png'
             ]);
         });
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);//->orderBy('created_at', 'DESC');
     }
 
     public function profile()
     {
         return $this->hasOne(Profile::class);
     }
+
 }
