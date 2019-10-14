@@ -84,15 +84,17 @@ class ProfilesController extends Controller
             'image' => '',
         ]);
 
-        if (request('image')) {
-            $imagePath = request('image')->store('profile', 'public');
+        //dd(request('image')->store('profile', 'public'));
 
+        if (request('image')) {
+            $imagePath = request('image')->store('profile', 'public');//gambar mau di simpan di mana ? yaitu di profile fodler public harusnya kalau di method create tidak perlu library intervention
+            //dua perintah di bawah ini memerlukan intervention
             $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
             $image->save();
 
             $imageArray = ['image' => $imagePath];
         }
-
+        //proses ini akan mengupdate di database
         auth()->user()->profile->update(array_merge(
             $data,
             $imageArray ?? []
