@@ -85,18 +85,20 @@ class ProfilesController extends Controller
             'image' => '',
         ]);
 
+
         if (request('image')) {
             $imagePath = request('image')->store('profile', 'public');// data di simpan ke folder profile di folder public
             //dua ini di bawah ini memerlukan invertation image library
+
             $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
             $image->save();
 
             $imageArray = ['image' => $imagePath];
         }
-
+        //proses ini akan mengupdate di database
         auth()->user()->profile->update(array_merge(
             $data,
-            $imageArray ?? []
+            $imageArray ?? []//jika ada image selain itu array kosong
         ));
 
         return redirect("/profile/{$user->id}");
