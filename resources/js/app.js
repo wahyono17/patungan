@@ -32,4 +32,7 @@ const app = new Vue({
 });
 const price = new Vue({
     el: '#price',
+    methods: {
+        fPrice:formatPrice(this.price),
+    },
 });

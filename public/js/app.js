@@ -49360,7 +49360,10 @@ var app = new Vue({
   el: '#app'
 });
 var price = new Vue({
-  el: '#price'
+  el: '#price',
+  methods: {
+    fPrice: formatPrice(this.price)
+  }
 });
 
 /***/ }),

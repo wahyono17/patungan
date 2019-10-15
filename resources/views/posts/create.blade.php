@@ -70,7 +70,7 @@
                            class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}"
                            name="price"
                            value="{{ old('price') }}"
-                           autocomplete="price" autofocus>
+                           autocomplete="price" autofocus v-change="fPrice">
 
                     @if ($errors->has('price'))
                         <span class="invalid-feedback" role="alert">
