@@ -28,6 +28,57 @@
                     @endif
                 </div>
 
+                <div class="form-group row">
+                    <label for="unit" class="col-md-4 col-form-label">Unit</label>
+
+                    <input id="unit"
+                           type="text"
+                           class="form-control{{ $errors->has('unit') ? ' is-invalid' : '' }}"
+                           name="unit"
+                           value="{{ old('unit') }}"
+                           autocomplete="unit" autofocus>
+
+                    @if ($errors->has('unit'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('unit') }}</strong>
+                        </span>
+                    @endif
+                </div>
+
+                <div class="form-group row">
+                    <label for="qty" class="col-md-4 col-form-label">Qty</label>
+
+                    <input id="qty"
+                           type="text"
+                           class="form-control{{ $errors->has('qty') ? ' is-invalid' : '' }}"
+                           name="qty"
+                           value="{{ old('qty') }}"
+                           autocomplete="qty" autofocus>
+
+                    @if ($errors->has('qty'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('qty') }}</strong>
+                        </span>
+                    @endif
+                </div>
+
+                <div class="form-group row">
+                    <label for="price" class="col-md-4 col-form-label">Angka</label>
+
+                    <input id="price"
+                           type="text"
+                           class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}"
+                           name="price"
+                           value="{{ old('price') }}"
+                           autocomplete="price" autofocus>
+
+                    @if ($errors->has('price'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('price') }}</strong>
+                        </span>
+                    @endif
+                </div>
+
                 <div class="row">
                     <label for="image" class="col-md-4 col-form-label">Post Image</label>
 
