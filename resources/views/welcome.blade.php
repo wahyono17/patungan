@@ -2,10 +2,11 @@
 @section('welcome')
 <div class="container">
 <div class="row"> 
-    <form class="form-inline mt-2 mb-2">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <form class="form-inline mt-2 mb-2" action="/search" method="post">
+      @csrf
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
+    </form>
 </div>
 </div>
 
@@ -35,7 +36,7 @@
     <div class="col-md-3 pr-2 card mb-2" style="">
         <img class="card-img-top" src="/storage/{{ $post->image }}" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
+          <h5 class="card-title">{{$post->caption}}</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>

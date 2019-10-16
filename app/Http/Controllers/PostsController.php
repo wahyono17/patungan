@@ -43,6 +43,9 @@ class PostsController extends Controller
     {
         $data = request()->validate([
             'caption' => 'required',
+            'unit'=>'required',
+            'qty'=>'required',
+            'price'=>'required',
             'image' => ['required', 'image'],
         ]);
 
@@ -53,6 +56,9 @@ class PostsController extends Controller
 
         auth()->user()->posts()->create([
             'caption' => $data['caption'],
+            'unit'=> $data['unit'],
+            'qty'=> $data['qty'],
+            'price'=> $data['price'],
             'image' => $imagePath,
         ]);
 
