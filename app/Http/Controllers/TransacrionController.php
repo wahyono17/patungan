@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Post;
+use App\Transaction;
 use Illuminate\Http\Request;
-use Intervention\Image\Facades\Image;
 
-class PostsController extends Controller
+class TransacrionController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -18,9 +14,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $users = auth()->user();//->following()->pluck('profiles.user_id');
-        $posts = Post::whereIn('user_id', $users)->latest()->paginate(5);
-        return view('posts.index', compact('posts'));
+        //
     }
 
     /**
@@ -30,7 +24,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        //
     }
 
     /**
@@ -41,28 +35,7 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        $data = request()->validate([
-            'caption' => 'required',
-            'unit'=>'required',
-            'qty'=>'required',
-            'price'=>'required',
-            'image' => ['required', 'image'],
-        ]);
-
-        $imagePath = request('image')->store('uploads', 'public');
-
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
-        $image->save();
-
-        auth()->user()->posts()->create([
-            'caption' => $data['caption'],
-            'unit'=> $data['unit'],
-            'qty'=> $data['qty'],
-            'price'=> $data['price'],
-            'image' => $imagePath,
-        ]);
-
-        return redirect('/post/' . auth()->user()->id);
+        //
     }
 
     /**
@@ -73,8 +46,7 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
-        return view('posts.show', compact('post'));
+        //
     }
 
     /**

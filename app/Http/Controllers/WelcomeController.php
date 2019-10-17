@@ -10,7 +10,11 @@ class WelcomeController extends Controller
         //dd($posts);
         return view('welcome', compact('posts'));
     }
-    public function search(){
-        $posts = Post::where('caption','like','%%');
+
+    public function search(Request $request){
+        $varSearch = $request->search;
+        //dd($varSearch);
+        $posts = Post::where('caption','like','%'.$varSearch.'%')->get();
+        dd($posts);
     }
 }

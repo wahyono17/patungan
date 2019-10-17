@@ -49359,12 +49359,14 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
-var price = new Vue({
-  el: '#price',
-  methods: {
-    fPrice: formatPrice(this.price)
-  }
+/*
+const yono = new Vue({
+    el: '#price',
+    methods: {
+        fPrice:function(){ return "$ " + this.value.toFixed(2).replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1,")}
+    },
 });
+*/
 
 /***/ }),
 

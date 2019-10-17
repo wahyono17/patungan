@@ -41,7 +41,7 @@ class User extends Authenticatable
         static::created(function($user){
             $user->profile()->create([
                 'title' => $user->name,
-                'image'=>'profile/xjv5ig59e7lMtLnFd2wOCPGH2LQlfh0oC2U74OpQ.png'
+                'image'=>'dafaultPicture/noImage.png'
             ]);
         });
     }
@@ -49,6 +49,11 @@ class User extends Authenticatable
     public function posts()
     {
         return $this->hasMany(Post::class);//->orderBy('created_at', 'DESC');
+    }
+
+    public function transaction()
+    {
+        return $this->hasMany(Transaction::class);
     }
 
     public function profile()
