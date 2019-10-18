@@ -56,6 +56,11 @@ class User extends Authenticatable
         return $this->hasMany(Transaction::class);
     }
 
+    public function transactionTemp()
+    {
+        return $this->hasMany(TransactionTemp::class);
+    }
+
     public function profile()
     {
         return $this->hasOne(Profile::class);

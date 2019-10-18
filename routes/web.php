@@ -13,6 +13,7 @@
 
 Route::get('/', 'WelcomeController@index');
 Route::get('/search', 'WelcomeController@search');
+Route::get('/transactionTemp/show/{id}','TransactionTempController@show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
