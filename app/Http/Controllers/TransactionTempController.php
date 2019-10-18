@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Post;
+use App\Profile;
 use App\TransactionTemp;
 use Illuminate\Http\Request;
 
@@ -64,9 +65,16 @@ class TransactionTempController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        $transaction = Post::where('id','=',$id)->get();
-        return view('transactionTemp.show', compact('transaction'));   
+    {   //ingat jika memakai where harus di ambil array ke 0 dulu
+        //$post = Post::where('id','=',$id)->get();
+        //$post = $post[0];
+        $post = Post::find($id);
+        //untuk mencari user pemilik post
+        $user_id = $post->user_id;
+        $profile = Profile::where('user_id','=',$user_id)->get();
+        $profile = $profile[0];
+        //dd($profile);
+        return view('transactionTemp.show',compact('post','profile'));   
     }
 
     /**
