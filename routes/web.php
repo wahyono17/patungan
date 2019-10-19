@@ -31,3 +31,6 @@ Route::get('/profile/{user}', 'ProfilesController@index');
 Route::get('/profile/{user}/edit', 'ProfilesController@edit');
 Route::patch('/profile/{user}', 'ProfilesController@update');
 
+Route::get('/coba', function(){
+    return view('coba');
+});

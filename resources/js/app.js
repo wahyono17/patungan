@@ -29,8 +29,31 @@ require('./components/ExampleComponent.vue').default);
  */
 
 const app = new Vue({
-    el: '#app',
+    el: '#coba',
+    data:{
+        title : "my title"
+    }
 });
+
+//mulai jquery adding by wahyono
+// resources/js/app.js
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+
+import 'jquery-ui/ui/widgets/datepicker.js';
+///
+// resources/js/app.js
+
+$('#datepicker').datepicker();
+/*
+$(document).ready(function(){
+    $('naik').click(function(){
+        alert('coba jquery');
+        var pertama = $('input1').val();
+        console.log(pertama);
+    });
+});
+*/
 /*
 const yono = new Vue({
     el: '#price',

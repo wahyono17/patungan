@@ -96,6 +96,5 @@
             @yield('welcome')
         </div>
     </div>
-    
 </body>
 </html>
