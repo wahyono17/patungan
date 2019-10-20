@@ -31,10 +31,23 @@ require('./components/ExampleComponent.vue').default);
 const app = new Vue({
     el: '#coba',
     data:{
-        title : "my title"
-    }
+        title : "my title",
+        content:"this my content",
+        sembarang:'',
+        kumpulanSembarang:[],
+        qty:1,
+        
+    },
+    methods: {
+        naik(){if(this.qty > 0){this.qty += 1}
+            },
+        turun(){if (this.qty > 1){
+            this.qty -= 1
+        }}
+    },
 });
 
+/*
 //mulai jquery adding by wahyono
 // resources/js/app.js
 import $ from 'jquery';
@@ -45,6 +58,7 @@ import 'jquery-ui/ui/widgets/datepicker.js';
 // resources/js/app.js
 
 $('#datepicker').datepicker();
+*/
 /*
 $(document).ready(function(){
     $('naik').click(function(){
