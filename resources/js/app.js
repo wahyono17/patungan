@@ -47,6 +47,23 @@ const app = new Vue({
     },
 });
 
+//angka naik turun di show post
+const transc = new Vue({
+    el: '#transc',
+    data:{
+        qty:1,
+        
+    },
+    methods: {
+        naik(){if(this.qty > 0){this.qty += 1}
+            },
+        turun(){if (this.qty > 1){
+            this.qty -= 1
+        }}
+    },
+});
+
+
 // resources/js/app.js
 
 import $ from 'jquery';

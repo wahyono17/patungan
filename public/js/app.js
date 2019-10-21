@@ -49382,6 +49382,25 @@ var app = new Vue({
       }
     }
   }
+}); //angka naik turun di show post
+
+var transc = new Vue({
+  el: '#transc',
+  data: {
+    qty: 1
+  },
+  methods: {
+    naik: function naik() {
+      if (this.qty > 0) {
+        this.qty += 1;
+      }
+    },
+    turun: function turun() {
+      if (this.qty > 1) {
+        this.qty -= 1;
+      }
+    }
+  }
 }); // resources/js/app.js
 
 
