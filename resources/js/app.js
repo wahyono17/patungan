@@ -27,38 +27,48 @@ require('./components/ExampleComponent.vue').default);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
+/*
 const app = new Vue({
     el: '#coba',
     data:{
         title : "my title"
     }
 });
-
-//mulai jquery adding by wahyono
+*/
 // resources/js/app.js
+
 import $ from 'jquery';
 window.$ = window.jQuery = $;
 
 import 'jquery-ui/ui/widgets/datepicker.js';
-///
+
 // resources/js/app.js
 
 $('#datepicker').datepicker();
-/*
-$(document).ready(function(){
-    $('naik').click(function(){
-        alert('coba jquery');
-        var pertama = $('input1').val();
-        console.log(pertama);
-    });
+
+//mulai coba2
+$('#yono').click(function(){
+    $('nav').removeClass('navbar')
+    $('nav').addClass('fixNavbar')
+    $('#title').removeClass('navbar-brand')
+    
 });
-*/
-/*
-const yono = new Vue({
-    el: '#price',
-    methods: {
-        fPrice:function(){ return "$ " + this.value.toFixed(2).replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1,")}
-    },
+//memakai jquery
+$(window).scroll(function(){
+    var atas = $('nav');
+    var stickey = atas.offsetTop;
+
 });
-*/
+
+//for judul selalu di atas
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("Navbar");    
+    navbar.classList.add("fixNavbar")
+  } else {
+    navbar.classList.remove("fixNavbar");
+  }
+}

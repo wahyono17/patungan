@@ -51574,38 +51574,44 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-var app = new Vue({
-  el: '#coba',
-  data: {
-    title: "my title"
-  }
-}); //mulai jquery adding by wahyono
+/*
+const app = new Vue({
+    el: '#coba',
+    data:{
+        title : "my title"
+    }
+});
+*/
 // resources/js/app.js
 
 
 window.$ = window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
- ///
-// resources/js/app.js
+ // resources/js/app.js
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#datepicker').datepicker();
-/*
-$(document).ready(function(){
-    $('naik').click(function(){
-        alert('coba jquery');
-        var pertama = $('input1').val();
-        console.log(pertama);
-    });
-});
-*/
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#datepicker').datepicker(); //mulai coba2
 
-/*
-const yono = new Vue({
-    el: '#price',
-    methods: {
-        fPrice:function(){ return "$ " + this.value.toFixed(2).replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1,")}
-    },
-});
-*/
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#yono').click(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('nav').removeClass('navbar');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('nav').addClass('fixNavbar');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#title').removeClass('navbar-brand');
+}); //memakai jquery
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function () {
+  var atas = jquery__WEBPACK_IMPORTED_MODULE_0___default()('nav');
+  var stickey = atas.offsetTop;
+}); //for judul selalu di atas
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("Navbar");
+    navbar.classList.add("fixNavbar");
+  } else {
+    navbar.classList.remove("fixNavbar");
+  }
+}
 
 /***/ }),
 

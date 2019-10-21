@@ -1,9 +1,14 @@
 @extends('layouts.app')
 @section('content')
-    <div>
-        <input type="text" value="1" id="input1"><button id="naik">+</button><button id="turun">-</button>
+<div class="container">
+<div class="row">
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-9">di dalam kiri</div>
+            <div class="col-md-3">sebelah kanan</div>
+        </div>
     </div>
-    <div id="coba">
-        <h3>{{title}}</h3>
-    </div>
+    <div class="col-md-3">sisi kanan</div>
+</div>
+</div>    
 @endsection
