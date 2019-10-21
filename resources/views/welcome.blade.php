@@ -3,7 +3,8 @@
 
 <div class="container">
 <div class="row">
-  <div class="card text-center mb-2">
+
+  <div class="card text-center mb-2" id="card">
   <div class="card-header">
     Featured
   </div>
@@ -24,7 +25,7 @@
 <div class="row">
   
   @foreach ($posts as $post)
-    <div class="col-md-3 pr-2 card mb-2" style="">
+    <div class="col-md-3 pr-2 card mb-2" id="card">
         <img class="card-img-top" src="/storage/{{ $post->image }}" alt="Card image cap">
         <div class="card-body">          
           <h5 class="card-title" name="caption">{{$post->caption}}</h5>

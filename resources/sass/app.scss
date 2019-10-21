@@ -9,4 +9,19 @@
 
 // resources/sass/app.scss
 
-//@import '~jquery-ui/themes/base/all.css';
+@import '~jquery-ui/themes/base/all.css';
+
+.fixNavbar{
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    
+};
+
+.static{
+    position: static;
+}

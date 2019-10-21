@@ -49328,9 +49328,14 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'jquery-ui/ui/widgets/datepicker.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -49377,38 +49382,36 @@ var app = new Vue({
       }
     }
   }
-});
-/*
-//mulai jquery adding by wahyono
-// resources/js/app.js
-import $ from 'jquery';
-window.$ = window.jQuery = $;
+}); // resources/js/app.js
 
-import 'jquery-ui/ui/widgets/datepicker.js';
-///
-// resources/js/app.js
 
-$('#datepicker').datepicker();
-*/
+window.$ = window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
+ // resources/js/app.js
 
-/*
-$(document).ready(function(){
-    $('naik').click(function(){
-        alert('coba jquery');
-        var pertama = $('input1').val();
-        console.log(pertama);
-    });
-});
-*/
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#datepicker').datepicker(); //mulai coba2
 
-/*
-const yono = new Vue({
-    el: '#price',
-    methods: {
-        fPrice:function(){ return "$ " + this.value.toFixed(2).replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1,")}
-    },
-});
-*/
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#yono').click(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('nav').removeClass('navbar');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('nav').addClass('fixNavbar');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#title').removeClass('navbar-brand');
+}); //memakai jquery
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function () {
+  var atas = jquery__WEBPACK_IMPORTED_MODULE_0___default()('nav');
+  var stickey = atas.offsetTop;
+}); //for judul selalu di atas
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("Navbar");
+    navbar.classList.add("fixNavbar");
+  } else {
+    navbar.classList.remove("fixNavbar");
+  }
+}
 
 /***/ }),
 
@@ -49546,7 +49549,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleNotFoundError: Module not found: Error: Can't resolve 'jquery-ui/themes/base/all.css' in 'C:\\Users\\HP 840\\Documents\\patungan\\resources\\sass'\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\webpack\\lib\\Compilation.js:925:10\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\webpack\\lib\\NormalModuleFactory.js:401:22\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\webpack\\lib\\NormalModuleFactory.js:130:21\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\webpack\\lib\\NormalModuleFactory.js:224:22\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\neo-async\\async.js:2830:7\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\neo-async\\async.js:6877:13\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\webpack\\lib\\NormalModuleFactory.js:214:25\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\Resolver.js:184:12\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5\n    at eval (eval at create (C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\UnsafeCachePlugin.js:37:5\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5\n    at eval (eval at create (C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5\n    at eval (eval at create (C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:27:1)\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\DescriptionFilePlugin.js:42:38\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5\n    at eval (eval at create (C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:28:1)\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\ModuleKindPlugin.js:23:37\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5\n    at eval (eval at create (C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5\n    at eval (eval at create (C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\forEachBail.js:30:14\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5\n    at eval (eval at create (C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\UnsafeCachePlugin.js:37:5\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5\n    at eval (eval at create (C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5\n    at eval (eval at create (C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:27:1)\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\DescriptionFilePlugin.js:42:38\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5\n    at eval (eval at create (C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\enhanced-resolve\\lib\\Resolver.js:238:5\n    at eval (eval at create (C:\\Users\\HP 840\\Documents\\patungan\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:27:1)");
 
 /***/ }),
 
