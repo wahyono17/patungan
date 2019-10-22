@@ -4,9 +4,15 @@ use App\Post;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
-{
+{   
+    public function firstpage(){
+        $posts = Post::all();//->orderBy('updated_at', 'DESC')->get();
+        return view('welcome', compact('posts'));
+    }
+
     public function index(){
-        $posts = Post::orderBy('updated_at', 'DESC')->get();
+        $id = auth()->user()->id;
+        $posts = Post::where('user_id','!=',$id)->orderBy('updated_at', 'DESC')->get();
         //dd($posts);
         return view('welcome', compact('posts'));
     }
