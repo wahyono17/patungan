@@ -43,7 +43,7 @@ class TransactionTempController extends Controller
     {
         $postId = $request->postid;
         $data = Post::find($postId);//ambil dari model
-        dd($data);
+        dd($postId);
         $qty = $request->qty;
         $totalPrice = $qty * $data->price;
 

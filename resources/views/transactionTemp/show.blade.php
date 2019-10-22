@@ -13,9 +13,9 @@
                             <h5 class="card-title">{{$post->caption}}</h5>
                             <h5 class="card-title">{{$post->price}}</h5>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <button @click="turun">-</button> <input type="text" v-model.number="qty" disable name="qty"> <button @click="naik">+</button> 
+                            <label @click="turun">-</label> <input type="text" v-model.number="qty" disable name="qty"> <label @click="naik">+</label> 
                             <br> <br>
-                            <button disabled="disabled" class="btn btn-primary">Go somewhere</button>                            
+                            <button type="submit" class="btn btn-primary">Go somewhere</button>                            
                         </div>
                     </div>
                 </form>
