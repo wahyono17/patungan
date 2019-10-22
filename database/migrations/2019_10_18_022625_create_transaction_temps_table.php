@@ -15,12 +15,14 @@ class CreateTransactionTempsTable extends Migration
     {
         Schema::create('transaction_temps', function (Blueprint $table) {
             $table->bigIncrements('id');
+
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('product_id');
             $table->string('caption');
             $table->string('unit');
             $table->unsignedInteger('qty');
             $table->float('price');
+            $table->float('totalPrice');
             $table->timestamps();
         });
     }

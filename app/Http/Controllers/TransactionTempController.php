@@ -8,7 +8,10 @@ use Illuminate\Http\Request;
 
 class TransactionTempController extends Controller
 {
-    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     
     /**
      * Display a listing of the resource.
@@ -38,11 +41,20 @@ class TransactionTempController extends Controller
      */
     public function store(Request $request)
     {
-        $postId = $request->id;
-        $data = Post::where('id','=',$postId)->get();
+        $postId = $request->postid;
+        $data = Post::find($postId);//ambil dari model
+        dd($data);
+        $qty = $request->qty;
+        $totalPrice = $qty * $data->price;
+
+        $id=auth()->user()->id;
+        dd($id);
         
-        $totalPrice = $data[0]->qty * $data[0]->price;
+        $tranTemp = new TransactionTemp;
+
+       
         
+
         /*
         auth()->user()->transactionTemp()->create([
             'user_id'=>$data['user_id'],

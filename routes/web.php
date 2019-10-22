@@ -10,15 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', 'WelcomeController@index');
 Route::get('/search', 'WelcomeController@search');
 Route::get('/transactionTemp/show/{id}','TransactionTempController@show');
-Auth::routes();
+Route::post('/transactionTemp/store','TransactionTempController@store');
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
+Route::get('/home', 'HomeController@index');
 
 Route::get('/post/{user}', 'PostsController@index');
 Route::get('/p/create', 'PostsController@create');
@@ -26,7 +25,7 @@ Route::post('/p', 'PostsController@store');
 Route::get('/p/{id}', 'PostsController@show');
 Route::patch('/p/{user}', 'PostsController@update');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
 Route::get('/profile/{user}', 'ProfilesController@index');
 Route::get('/profile/{user}/edit', 'ProfilesController@edit');
 Route::patch('/profile/{user}', 'ProfilesController@update');
