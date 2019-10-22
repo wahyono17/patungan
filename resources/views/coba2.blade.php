@@ -1,9 +1,8 @@
 @extends('layouts.app')
 @section('content')
-    <div id="yono">
-        <div
-        class="card"
-        v-bind:class="{ active: isActive }"
-        >p</div>
-    </div>
+    <form action="/coba/store" method="post">
+        @csrf
+        <input type="text" name="id">
+        <button type="submit" >pencet</button>
+    </form>
 @endsection

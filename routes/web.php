@@ -36,3 +36,5 @@ Route::get('/coba', function(){
 Route::get('/coba2', function(){
     return view('coba2');
 });
+
+Route::post('coba/store','CobaController@store');

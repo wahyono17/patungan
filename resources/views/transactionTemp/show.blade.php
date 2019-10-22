@@ -2,26 +2,26 @@
 @section('content')
     <div class="container">
     <div class="row">
-        <div class="col-md-9">
-        <div class="row">
-            <img class="card col-md-5" src="/storage/{{$post->image}}" alt="">
+        <div class="col-md-3">
+            <img src="/storage/{{$post->image}}" alt="" class="w-100">
+        </div>
+        
+        <div class="col-md-6">
                 <form action="/transactionTemp/store" method="post">
                     @csrf
-                    <div class="card col-md-7" id="transc">
+                    <div class="card" id="transc">
                         <div class="card-body">
-                            <p hidden name="postid">{{$post->id}}</p>
+                            <input name="postid" value="{{$post->id}}" type="hidden">
                             <h5 class="card-title">{{$post->caption}}</h5>
                             <h5 class="card-title">{{$post->price}}</h5>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             <label @click="turun">-</label> <input type="text" v-model.number="qty" disable name="qty"> <label @click="naik">+</label> 
                             <br> <br>
-                            <button type="submit" class="btn btn-primary">Go somewhere</button>                            
+                            <button type="submit" class="btn btn-primary">Go somewhere</button>
                         </div>
                     </div>
                 </form>
-        </div>    
         </div>
-
         <div class=" card col-md-3"> 
             <div class="card">
                 <img src="/storage/{{$profile->image}}" class="card-img-top" alt="...">
