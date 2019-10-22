@@ -35,7 +35,6 @@
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>
-                <div class="col-md-2"></div>
                 
                 <div class="col-md-1 col-lg-1">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -71,7 +70,7 @@
                                 </div>
                                 <div>                            
                                 <!-- untuk menampilkan home yaitu = welcome -->
-                                <a class="nav-link" href="/">Home</a>
+                                <a class="nav-link" href="/index">Home</a>
                                 </div>
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -99,6 +98,7 @@
             </div>  
             </div>
         </nav>
+        
         <div>
             @yield('content')
         </div>

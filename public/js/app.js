@@ -51620,7 +51620,7 @@ var transc = new Vue({
 window.$ = window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
  // resources/js/app.js
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#datepicker').datepicker(); //mulai coba2
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#datepicker').datepicker(); //mulai coba2 untuk judul selalu di atas tapi belum selesai
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('#yono').click(function () {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('nav').removeClass('navbar');
@@ -51792,8 +51792,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\root\Documents\patungan\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\root\Documents\patungan\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\HP 840\Documents\patungan\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\HP 840\Documents\patungan\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

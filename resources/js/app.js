@@ -75,7 +75,7 @@ import 'jquery-ui/ui/widgets/datepicker.js';
 
 $('#datepicker').datepicker();
 
-//mulai coba2
+//mulai coba2 untuk judul selalu di atas tapi belum selesai
 $('#yono').click(function(){
     $('nav').removeClass('navbar')
     $('nav').addClass('fixNavbar')

@@ -13,6 +13,7 @@
 Auth::routes();
 
 Route::get('/', 'WelcomeController@firstpage');
+Route::get('/index', 'WelcomeController@index');
 Route::get('/search', 'WelcomeController@search');
 Route::get('/transactionTemp/show/{id}','TransactionTempController@show');
 Route::post('/transactionTemp/store','TransactionTempController@store');
