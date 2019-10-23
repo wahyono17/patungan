@@ -20,6 +20,8 @@ class WelcomeController extends Controller
     }
 
     public function search(Request $request){
+        $lihat = $request->inputcari;
+        dd($lihat);
         $id = auth()->user()->id;
         $varSearch = $request->search;
         //cari yang like di tulis dan user_id bukan id yang melihat
