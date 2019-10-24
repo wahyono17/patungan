@@ -100,12 +100,9 @@
             </div>
         </nav>
         
-        <div>
+        <div id="content">
             @yield('content')
-        </div>
-        <div>
-            @yield('welcome')
-        </div>
+        </div>    
     </div>
 </body>
 </html>

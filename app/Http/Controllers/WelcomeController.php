@@ -20,12 +20,12 @@ class WelcomeController extends Controller
     }
 
     public function search(Request $request){
-        $lihat = $request->inputcari;
-        dd($lihat);
-        $id = auth()->user()->id;
-        $varSearch = $request->search;
+        
+        $id = auth()->user()->id ?? 0;//jika belum login maka id = 0
+        
+        $varSearch = $request->inputcari;
         //cari yang like di tulis dan user_id bukan id yang melihat
-        $posts = Post::where('caption','like','%'.$varSearch.'%' && 'user_id','!=',$id )->get();
+        $posts = Post::where('caption','like','%'.$varSearch.'%')->where('user_id','!=',$id)->get();
         return view('welcome', compact('posts'));
     }
 }
