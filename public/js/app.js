@@ -51620,7 +51620,35 @@ var transc = new Vue({
 window.$ = window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
  // resources/js/app.js
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#datepicker').datepicker(); //mulai coba2 untuk judul selalu di atas tapi belum selesai
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('#datepicker').datepicker(); //ajax jquery
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#inputcari').change(function () {
+    var cari = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#inputcari').val(); //panggil ajax
+
+    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
+      type: "GET",
+      url: "/search" + cari,
+      success: function success(respone) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('#content').html(respone);
+      }
+    });
+    /*
+    var provDest = $('#provinceDest').val();
+    //panggil ajax
+    $.ajax({
+        type: "GET",
+        url: "/city/"+ provDest,
+        //data: "data",
+        //dataType: "dataType",
+        success: function (response) {
+          $('#cityDest').html(response);  
+        }
+    });  
+    */
+  });
+}); //
+//mulai coba2 untuk judul selalu di atas tapi belum selesai
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('#yono').click(function () {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('nav').removeClass('navbar');
@@ -51792,8 +51820,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\HP 840\Documents\patungan\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\HP 840\Documents\patungan\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\root\Documents\patungan\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\root\Documents\patungan\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

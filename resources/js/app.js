@@ -75,6 +75,35 @@ import 'jquery-ui/ui/widgets/datepicker.js';
 
 $('#datepicker').datepicker();
 
+//ajax jquery
+$(document).ready(function(){
+    $('#inputcari').change(function(){
+        var cari = $('#inputcari').val();
+        //panggil ajax
+        $.ajax({
+            type:"GET",
+            url:"/search"+cari,
+            success:function(respone){
+                $('#content').html(respone);
+            }
+        });
+        /*
+        var provDest = $('#provinceDest').val();
+        //panggil ajax
+        $.ajax({
+            type: "GET",
+            url: "/city/"+ provDest,
+            //data: "data",
+            //dataType: "dataType",
+            success: function (response) {
+              $('#cityDest').html(response);  
+            }
+        });  
+        */
+    });
+});
+//
+
 //mulai coba2 untuk judul selalu di atas tapi belum selesai
 $('#yono').click(function(){
     $('nav').removeClass('navbar')
