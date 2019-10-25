@@ -75,6 +75,23 @@ import 'jquery-ui/ui/widgets/datepicker.js';
 
 $('#datepicker').datepicker();
 
+//jquery ajax cari
+$(document).ready(function(){
+    $('#inputcari').change(function(){
+        var cari = $('#inputcari').val();
+        //panggil ajax
+        $.ajax({
+            type: "GET",
+            url: "/search"+ cari,
+            //data: tidak perlu mengirim data karena oop
+            success: function (response) {
+                $('#content').html(response);
+            }
+        });  
+    });
+});
+//
+
 //mulai coba2 untuk judul selalu di atas tapi belum selesai
 $('#yono').click(function(){
     $('nav').removeClass('navbar')
