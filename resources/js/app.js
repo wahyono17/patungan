@@ -67,29 +67,31 @@ const transc = new Vue({
 // resources/js/app.js
 
 import $ from 'jquery';
+//import { on } from 'cluster';
 window.$ = window.jQuery = $;
 
-import 'jquery-ui/ui/widgets/datepicker.js';
+//import 'jquery-ui/ui/widgets/datepicker.js';
 
 // resources/js/app.js
 
-$('#datepicker').datepicker();
+//$('#datepicker').datepicker();
 
-//jquery ajax cari
+//ajax jquery
+
 $(document).ready(function(){
-    $('#inputcari').change(function(){
+    $('#inputcari').on('keyup',function(){
         var cari = $('#inputcari').val();
         //panggil ajax
         $.ajax({
-            type: "GET",
-            url: "/search"+ cari,
-            //data: tidak perlu mengirim data karena oop
-            success: function (response) {
-                $('#content').html(response);
+            type:"GET",
+            url:"/search"+cari,
+            success:function(respone){
+                $('#content').html('<h1>berhasil</h1>');
             }
         });  
     });
 });
+
 //
 
 //mulai coba2 untuk judul selalu di atas tapi belum selesai
