@@ -1,9 +1,9 @@
 <template>
     <div class="container">
-        <input type="text" name="" id="" class="bg-gray-300 px-4 py-2" v-model="fruit" @input="filterFruits">
+        <input type="text" name="" id="" v-model="fruit" @input="filterFruits">
         <div v-if="filteredFruits">
             <ul>
-                <li v-for="filteredFruit in filteredFruits">{{filteredFruit}}</li>
+                <li v-for="filteredFruit in filteredFruits" v-bind:key="filteredFruit.id">{{filteredFruit}}</li>
             </ul>
         </div>
    </div>

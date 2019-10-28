@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Post;
 use Illuminate\Http\Request;
-
 class CobaController extends Controller
 {
     /**
@@ -13,7 +12,7 @@ class CobaController extends Controller
      */
     public function index()
     {
-        //
+        return view('search');
     }
 
     /**
@@ -21,6 +20,14 @@ class CobaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function search(Request $request){
+        $search = $request->get('term');
+        $result = Post::where('caption', 'LIKE', '%'. $search. '%')->get();
+ 
+        return response()->json($result);
+    }
+
     public function create()
     {
         //

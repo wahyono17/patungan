@@ -12163,6 +12163,9 @@ a.text-dark:focus {
   }
 }
 
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
 .fixNavbar {
   position: fixed;
   display: flex;

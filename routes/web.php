@@ -44,3 +44,6 @@ Route::get('/coba3', function(){
 });
 
 Route::post('coba/store','CobaController@store');
+
+Route::get('search', 'CobaController@index');
+Route::get('autocomplete', 'CobaController@search');

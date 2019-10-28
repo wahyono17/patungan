@@ -37276,7 +37276,9 @@ var render = function() {
           _c(
             "ul",
             _vm._l(_vm.filteredFruits, function(filteredFruit) {
-              return _c("li", [_vm._v(_vm._s(filteredFruit))])
+              return _c("li", { key: filteredFruit.id }, [
+                _vm._v(_vm._s(filteredFruit))
+              ])
             }),
             0
           )
@@ -49776,8 +49778,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\HP 840\Documents\patungan\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\HP 840\Documents\patungan\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\root\Documents\patungan\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\root\Documents\patungan\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

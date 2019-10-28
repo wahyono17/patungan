@@ -8,6 +8,8 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -83,6 +85,17 @@ const transc = new Vue({
 import $ from 'jquery';
 //import { on } from 'cluster';
 window.$ = window.jQuery = $;
+
+$(document).ready(function(){
+    var route = "{{ url('autocomplete') }}";
+    $('#searchJQ').typeahead({
+        source:  function (term, process) {
+        return $.get(route, { term: term }, function (data) {
+                return process(data);
+            });
+        }
+    });
+});
 
 //import 'jquery-ui/ui/widgets/datepicker.js';
 
