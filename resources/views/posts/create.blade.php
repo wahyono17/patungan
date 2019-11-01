@@ -27,25 +27,9 @@
                         </span>
                     @endif
                 </div>
-
-                <div class="form-group row">
-                    <label for="unit" class="col-md-4 col-form-label">Unit</label>
-
-                    <input id="unit"
-                           type="text"
-                           class="form-control{{ $errors->has('unit') ? ' is-invalid' : '' }}"
-                           name="unit"
-                           value="{{ old('unit') }}"
-                           autocomplete="unit" autofocus>
-
-                    @if ($errors->has('unit'))
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('unit') }}</strong>
-                        </span>
-                    @endif
-                </div>
-
-                <div class="form-group row">
+            <div class="row">
+            <span style="display: flex;justify-content: space-between">
+                <div class="form-group row col-md-6">
                     <label for="qty" class="col-md-4 col-form-label">Qty</label>
 
                     <input id="qty"
@@ -61,7 +45,24 @@
                         </span>
                     @endif
                 </div>
+                <div class="form-group row col-md-6">
+                    <label for="unit" class="col-md-4 col-form-label">Unit</label>
 
+                    <input id="unit"
+                           type="text"
+                           class="form-control{{ $errors->has('unit') ? ' is-invalid' : '' }}"
+                           name="unit"
+                           value="{{ old('unit') }}"
+                           autocomplete="unit" autofocus>
+
+                    @if ($errors->has('unit'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('unit') }}</strong>
+                        </span>
+                    @endif
+                </div>   
+            </span>
+            </div>
                 <div class="form-group row">
                     <label for="price" class="col-md-4 col-form-label">Angka</label>
 
