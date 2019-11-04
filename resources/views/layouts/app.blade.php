@@ -37,7 +37,8 @@
                     </form>
                 </div>
                 
-                <div class="col-md-1 col-lg-1">
+                
+                <div class="col-md-3 col-lg-3">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
                     </button>

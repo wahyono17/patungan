@@ -75,19 +75,31 @@ import 'jquery-ui/ui/widgets/datepicker.js';
 
 $('#datepicker').datepicker();
 
-//jquery ajax cari
+//ajax jquery
 $(document).ready(function(){
     $('#inputcari').change(function(){
         var cari = $('#inputcari').val();
         //panggil ajax
         $.ajax({
+            type:"GET",
+            url:"/search"+cari,
+            success:function(respone){
+                $('#content').html(respone);
+            }
+        });
+        /*
+        var provDest = $('#provinceDest').val();
+        //panggil ajax
+        $.ajax({
             type: "GET",
-            url: "/search"+ cari,
-            //data: tidak perlu mengirim data karena oop
+            url: "/city/"+ provDest,
+            //data: "data",
+            //dataType: "dataType",
             success: function (response) {
-                $('#content').html(response);
+              $('#cityDest').html(response);  
             }
         });  
+        */
     });
 });
 //
