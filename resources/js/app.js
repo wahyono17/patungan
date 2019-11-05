@@ -63,7 +63,6 @@ const transc = new Vue({
     },
 });
 
-
 // resources/js/app.js
 
 import $ from 'jquery';
@@ -130,3 +129,7 @@ function myFunction() {
     navbar.classList.remove("fixNavbar");
   }
 }
+
+$(document).ready(function(){
+    $('#price').simpleMoneyFormat();
+});

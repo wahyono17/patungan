@@ -68,12 +68,11 @@
 
                     <input id="price"
                            type="text"
-                           class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}"
+                           class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}"                           
                            name="price"
                            value="{{ old('price') }}"
                            autocomplete="price" autofocus
                            >
-
                     @if ($errors->has('price'))
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('price') }}</strong>
@@ -92,7 +91,7 @@
                 </div>
 
                 <div class="row pt-4">
-                    <button class="btn btn-primary">Add New Post</button>
+                    <button class="btn btn-primary" id="btn">Add New Post</button>
                 </div>
 
             </div>

@@ -53,12 +53,17 @@ class PostsController extends Controller
 
         $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
         $image->save();
-
+        //change text since convert by simple.money.format.js
+            $price = $data['price'];
+            $price = str_replace(',','',$price);
+            $price = floatval($price);
+        //    
+        
         auth()->user()->posts()->create([
             'caption' => $data['caption'],
             'unit'=> $data['unit'],
             'qty'=> $data['qty'],
-            'price'=> $data['price'],
+            'price'=> $price,
             'image' => $imagePath,
         ]);
 

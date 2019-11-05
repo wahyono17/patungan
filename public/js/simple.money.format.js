@@ -51671,8 +51671,7 @@ function myFunction() {
   } else {
     navbar.classList.remove("fixNavbar");
   }
-} //money format
-
+}
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#price').simpleMoneyFormat();
@@ -51807,6 +51806,94 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/simple.money.format.js":
+/*!*********************************************!*\
+  !*** ./resources/js/simple.money.format.js ***!
+  \*********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+window.$ = window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
+
+(function ($) {
+  $.fn.simpleMoneyFormat = function () {
+    this.each(function (index, el) {
+      var elType = null; // input or other
+
+      var value = null; // get value
+
+      if ($(el).is('input') || $(el).is('textarea')) {
+        value = $(el).val().replace(/,/g, '');
+        elType = 'input';
+      } else {
+        value = $(el).text().replace(/,/g, '');
+        elType = 'other';
+      } // if value changes
+
+
+      $(el).on('paste keyup', function () {
+        value = $(el).val().replace(/,/g, '');
+        formatElement(el, elType, value); // format element
+      });
+      formatElement(el, elType, value); // format element
+    });
+
+    function formatElement(el, elType, value) {
+      var result = '';
+      var valueArray = value.split('');
+      var resultArray = [];
+      var counter = 0;
+      var temp = '';
+
+      for (var i = valueArray.length - 1; i >= 0; i--) {
+        temp += valueArray[i];
+        counter++;
+
+        if (counter == 3) {
+          resultArray.push(temp);
+          counter = 0;
+          temp = '';
+        }
+      }
+
+      ;
+
+      if (counter > 0) {
+        resultArray.push(temp);
+      }
+
+      for (var i = resultArray.length - 1; i >= 0; i--) {
+        var resTemp = resultArray[i].split('');
+
+        for (var j = resTemp.length - 1; j >= 0; j--) {
+          result += resTemp[j];
+        }
+
+        ;
+
+        if (i > 0) {
+          result += ',';
+        }
+      }
+
+      ;
+
+      if (elType == 'input') {
+        $(el).val(result);
+      } else {
+        $(el).empty().text(result);
+      }
+    }
+  };
+})(jQuery);
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -51819,12 +51906,13 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!***************************************************************************************************!*\
+  !*** multi ./resources/js/simple.money.format.js ./resources/js/app.js ./resources/sass/app.scss ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(/*! C:\Users\root\Documents\patungan\resources\js\simple.money.format.js */"./resources/js/simple.money.format.js");
 __webpack_require__(/*! C:\Users\root\Documents\patungan\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\root\Documents\patungan\resources\sass\app.scss */"./resources/sass/app.scss");
 
